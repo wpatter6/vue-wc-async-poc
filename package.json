@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vue-cli-service serve --target wc-async --name v-app src/components/**/*.vue",
+    "serve-folder": "npm i -g serve && serve -s dist",
+    "build": "vue-cli-service build --target wc-async --name v-app src/components/**/*.vue",
+    "watch": "vue-cli-service build --watch --no-clean --target wc-async --name v-app src/components/**/*.vue",
+    "publish": "npm run build && npm run copy-dist",
+    "lint": "vue-cli-service lint",
+    "copy-dist": "robocopy dist ../EpiserverSite1/EpiserverSite1/Static/js/dist /e /is /it & IF %ERRORLEVEL% LEQ 1 exit 0"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -20,7 +24,8 @@
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "serve": "^11.0.0"
   },
   "postcss": {
     "plugins": {
