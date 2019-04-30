@@ -1,4 +1,4 @@
-# episerver-vue-2
+# vue-wc-async-poc
 
 ## Project setup
 
