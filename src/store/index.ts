@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
+
 const defaultText = "Vue.js is cool.";
 const textStorageKey = "stored-text";
 const storedText = localStorage.getItem(textStorageKey);

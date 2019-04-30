@@ -5,13 +5,16 @@ module.exports = {
     config.optimization.delete("splitChunks");
   },
   configureWebpack: {
+    resolve: {
+      alias: {
+        "@": "src"
+      }
+    },
     plugins: [
       {
         apply(compiler) {
           compiler.hooks.done.tap("copy-dist-plugin", stats =>
-            exec("npm run copy-dist", (err, stdout, stderr) => {
-              err ? console.error(stderr) : console.log(stdout);
-            })
+            exec("npm run copy-dist")
           );
         }
       }

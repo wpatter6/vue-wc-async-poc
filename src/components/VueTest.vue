@@ -33,6 +33,7 @@ export default Vue.extend({
 .container {
   background-color: #86cc98;
   display: inline-block;
+  border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;

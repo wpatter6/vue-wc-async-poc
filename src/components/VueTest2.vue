@@ -2,6 +2,7 @@
   <div class="container">
     <div>Change text:</div>
     <input :value="text" @input="setText">
+    BLAHBLAHBLAH
   </div>
 </template>
 
@@ -25,10 +26,14 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .container {
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 10px;
+  align-items: center;
+  margin: 10px 0;
+  padding: 20px;
+  background-color: lightblue;
 
   input {
     margin-left: 10px;
