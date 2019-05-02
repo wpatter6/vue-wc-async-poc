@@ -2,6 +2,7 @@
   <div class="container">
     <img src="../assets/logo.png">
     <span>{{text}}</span>
+    <slot></slot>
   </div>
 </template>
 
@@ -12,11 +13,11 @@ import BaseComponent from "../BaseComponent.vue";
 
 export default Vue.extend({
   props: {
-    propText: String
+    startText: String
   },
   mounted() {
-    if (this.propText) {
-      this.setText(this.propText);
+    if (this.startText) {
+      this.setText(this.startText);
     }
   },
   computed: {

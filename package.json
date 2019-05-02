@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "npm i -g serve && serve -s dist",
     "build": "vue-cli-service build --target wc-async --name v-app src/components/**/*.vue",
+    "build-dev": "vue-cli-service build --mode development --target wc-async --name v-app src/components/**/*.vue",
     "watch": "vue-cli-service build --watch --no-clean --report --mode development --target wc-async --name v-app src/components/**/*.vue",
     "publish": "npm run build && npm run copy-dist",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "copy-dist": "robocopy dist ../EpiserverSite1/EpiserverSite1/Static/js/dist /e /it & IF %ERRORLEVEL% LEQ 1 exit 0"
   },
   "dependencies": {
     "core-js": "^2.6.5",

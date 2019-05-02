@@ -2,7 +2,7 @@
   <div class="container">
     <div>Change text:</div>
     <input :value="text" @input="setText">
-    BLAHBLAHBLAH
+    <slot name="horizontal-content"></slot>
   </div>
 </template>
 
